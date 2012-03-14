@@ -105,7 +105,7 @@
 /* Begin PBXFileReference section */
 		473E36C7151124BA001B0409 /* mtlScrollFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mtlScrollFormViewController.h; sourceTree = "<group>"; };
 		473E36C8151124BA001B0409 /* mtlScrollFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mtlScrollFormViewController.m; sourceTree = "<group>"; };
-		47B981981511172600F9DA1E /* libmtliOSUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libmtliOSUtils.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		47B981981511172600F9DA1E /* libmtlUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libmtlUtils.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		47B9819B1511172600F9DA1E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		47B981AF151117BF00F9DA1E /* mtliOSUtils-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mtliOSUtils-Prefix.pch"; sourceTree = "<group>"; };
 		47B981B51511189600F9DA1E /* mtlStringValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mtlStringValidation.h; sourceTree = "<group>"; };
@@ -186,7 +186,7 @@
 		47B981991511172600F9DA1E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				47B981981511172600F9DA1E /* libmtliOSUtils.a */,
+				47B981981511172600F9DA1E /* libmtlUtils.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -357,9 +357,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		47B981971511172600F9DA1E /* mtliOSUtils */ = {
+		47B981971511172600F9DA1E /* mtlUtils */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 47B981A51511172600F9DA1E /* Build configuration list for PBXNativeTarget "mtliOSUtils" */;
+			buildConfigurationList = 47B981A51511172600F9DA1E /* Build configuration list for PBXNativeTarget "mtlUtils" */;
 			buildPhases = (
 				47B981941511172600F9DA1E /* Sources */,
 				47B981951511172600F9DA1E /* Frameworks */,
@@ -370,9 +370,9 @@
 			dependencies = (
 				47B9830815111B7200F9DA1E /* PBXTargetDependency */,
 			);
-			name = mtliOSUtils;
+			name = mtlUtils;
 			productName = "mtl-ios-utils";
-			productReference = 47B981981511172600F9DA1E /* libmtliOSUtils.a */;
+			productReference = 47B981981511172600F9DA1E /* libmtlUtils.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -403,7 +403,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				47B981971511172600F9DA1E /* mtliOSUtils */,
+				47B981971511172600F9DA1E /* mtlUtils */,
 			);
 		};
 /* End PBXProject section */
@@ -536,7 +536,7 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_NAME = mtliOSUtils;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -552,7 +552,7 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_NAME = mtliOSUtils;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -569,7 +569,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		47B981A51511172600F9DA1E /* Build configuration list for PBXNativeTarget "mtliOSUtils" */ = {
+		47B981A51511172600F9DA1E /* Build configuration list for PBXNativeTarget "mtlUtils" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				47B981A61511172600F9DA1E /* Debug */,
