@@ -1,9 +1,9 @@
 //
 //  mtlURLRequest.m
-//  Delight
+//  mtliOSUtils
 //
 //  Created by Elie Zananiri on 12-01-19.
-//  Copyright 2012 silentlyCrashing::net. All rights reserved.
+//  Copyright (c) 2012 Departement. All rights reserved.
 //
 
 #import "mtlURLRequest.h"
