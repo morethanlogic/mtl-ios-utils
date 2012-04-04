@@ -57,6 +57,12 @@
 }
 
 //--------------------------------------------------------------
++ (BOOL)validateNumeric:(NSString *)candidate
+{
+    return [self validateStringInCharacterSet:candidate characterSet:[NSCharacterSet decimalDigitCharacterSet]];
+}
+
+//--------------------------------------------------------------
 + (BOOL)validateAlphaSpace:(NSString *)candidate
 {
     NSMutableCharacterSet *characterSet = [NSMutableCharacterSet letterCharacterSet];

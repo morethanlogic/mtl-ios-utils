@@ -23,6 +23,7 @@
 
 + (BOOL)validateAlpha:(NSString *)candidate;
 + (BOOL)validateAlphanumeric:(NSString *)candidate;
++ (BOOL)validateNumeric:(NSString *)candidate;
 + (BOOL)validateAlphaSpace:(NSString *)candidate;
 + (BOOL)validateAlphanumericSpace:(NSString *)candidate;
 
