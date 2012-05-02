@@ -12,11 +12,6 @@
 //--------------------------------------------------------------
 @interface mtlScrollFormViewController ()
 
-- (void)keyboardWillShow:(NSNotification*)notification;
-- (void)keyboardWillHide:(NSNotification*)notification;
-- (void)scrollViewToCenterOfScreen:(UIView *)theView;
-- (void)scrollViewToTopOfScreen:(UIView *)theView;
-
 @end
 
 //--------------------------------------------------------------

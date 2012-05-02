@@ -19,6 +19,11 @@
 
 - (NSArray *)entryFields;
 
+- (void)keyboardWillShow:(NSNotification*)notification;
+- (void)keyboardWillHide:(NSNotification*)notification;
+- (void)scrollViewToCenterOfScreen:(UIView *)theView;
+- (void)scrollViewToTopOfScreen:(UIView *)theView;
+
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, retain) NSMutableArray *entryFields;
 
