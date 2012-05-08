@@ -57,51 +57,6 @@
 		47B9830615111B2000F9DA1E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 47B9830515111B2000F9DA1E /* libz.dylib */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		47B981CA15111A9600F9DA1E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 47B981BD15111A9600F9DA1E /* CWFoundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D;
-			remoteInfo = CWFoundation;
-		};
-		47B981CC15111A9600F9DA1E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 47B981BD15111A9600F9DA1E /* CWFoundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A6B254EE136BF9E700D5F57F;
-			remoteInfo = CWNetworkMonitor;
-		};
-		47B981CE15111A9600F9DA1E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 47B981BD15111A9600F9DA1E /* CWFoundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A6ED914F13694AD8002DCEE4;
-			remoteInfo = UnitTests;
-		};
-		47B981D015111A9600F9DA1E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 47B981BD15111A9600F9DA1E /* CWFoundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A6A971981369B2D80065D9BE;
-			remoteInfo = NetworkMonitorSampleApp;
-		};
-		47B981D215111A9600F9DA1E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 47B981BD15111A9600F9DA1E /* CWFoundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A6A971C41369B3C90065D9BE;
-			remoteInfo = XMLTranslatorSampleApp;
-		};
-		47B9830715111B7200F9DA1E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 47B981BD15111A9600F9DA1E /* CWFoundation.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D;
-			remoteInfo = CWFoundation;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		473E36C7151124BA001B0409 /* mtlScrollFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mtlScrollFormViewController.h; sourceTree = "<group>"; };
 		473E36C8151124BA001B0409 /* mtlScrollFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mtlScrollFormViewController.m; sourceTree = "<group>"; };
@@ -112,7 +67,6 @@
 		47B981B61511189600F9DA1E /* mtlStringValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mtlStringValidation.m; sourceTree = "<group>"; };
 		47B981B71511189600F9DA1E /* mtlURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mtlURLRequest.h; sourceTree = "<group>"; };
 		47B981B81511189600F9DA1E /* mtlURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mtlURLRequest.m; sourceTree = "<group>"; };
-		47B981BD15111A9600F9DA1E /* CWFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CWFoundation.xcodeproj; path = CWFoundation/CWFoundation.xcodeproj; sourceTree = "<group>"; };
 		47B981DC15111AA400F9DA1E /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		47B981DD15111AA400F9DA1E /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		47B981DE15111AA400F9DA1E /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -229,21 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				47B981D415111AA400F9DA1E /* ASIHTTPRequest */,
-				47B981BD15111A9600F9DA1E /* CWFoundation.xcodeproj */,
 			);
 			path = Vendor;
-			sourceTree = "<group>";
-		};
-		47B981BE15111A9600F9DA1E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				47B981CB15111A9600F9DA1E /* libCWFoundation.a */,
-				47B981CD15111A9600F9DA1E /* libCWNetworkMonitor.a */,
-				47B981CF15111A9600F9DA1E /* UnitTests.octest */,
-				47B981D115111A9600F9DA1E /* NetworkMonitorSampleApp.app */,
-				47B981D315111A9600F9DA1E /* XMLTranslatorSampleApp.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		47B981D415111AA400F9DA1E /* ASIHTTPRequest */ = {
@@ -368,7 +309,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				47B9830815111B7200F9DA1E /* PBXTargetDependency */,
 			);
 			name = mtlUtils;
 			productName = "mtl-ios-utils";
@@ -395,56 +335,12 @@
 			mainGroup = 47B9818D1511172600F9DA1E;
 			productRefGroup = 47B981991511172600F9DA1E /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 47B981BE15111A9600F9DA1E /* Products */;
-					ProjectRef = 47B981BD15111A9600F9DA1E /* CWFoundation.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				47B981971511172600F9DA1E /* mtlUtils */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		47B981CB15111A9600F9DA1E /* libCWFoundation.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libCWFoundation.a;
-			remoteRef = 47B981CA15111A9600F9DA1E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		47B981CD15111A9600F9DA1E /* libCWNetworkMonitor.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libCWNetworkMonitor.a;
-			remoteRef = 47B981CC15111A9600F9DA1E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		47B981CF15111A9600F9DA1E /* UnitTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = UnitTests.octest;
-			remoteRef = 47B981CE15111A9600F9DA1E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		47B981D115111A9600F9DA1E /* NetworkMonitorSampleApp.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = NetworkMonitorSampleApp.app;
-			remoteRef = 47B981D015111A9600F9DA1E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		47B981D315111A9600F9DA1E /* XMLTranslatorSampleApp.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = XMLTranslatorSampleApp.app;
-			remoteRef = 47B981D215111A9600F9DA1E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		47B981941511172600F9DA1E /* Sources */ = {
@@ -473,14 +369,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		47B9830815111B7200F9DA1E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CWFoundation;
-			targetProxy = 47B9830715111B7200F9DA1E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		47B981A31511172600F9DA1E /* Debug */ = {
