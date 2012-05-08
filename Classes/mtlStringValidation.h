@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+//--------------------------------------------------------------
+//--------------------------------------------------------------
 @interface StringValidation : NSObject
 
 + (BOOL)validateNotEmpty:(NSString *)candidate;
