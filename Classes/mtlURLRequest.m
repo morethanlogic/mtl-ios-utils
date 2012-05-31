@@ -31,6 +31,15 @@
 }
 
 //--------------------------------------------------------------
+- (void)clear
+{
+    if (httpRequest != nil) {
+        [httpRequest clearDelegatesAndCancel];
+        httpRequest = nil;
+    }
+}
+
+//--------------------------------------------------------------
 - (NSString *)buildRequestURL
 {
     return nil;
@@ -46,10 +55,7 @@
 - (void)process
 {
     // Clear any old request first.
-    if (httpRequest != nil) {
-        [httpRequest clearDelegatesAndCancel];
-        httpRequest = nil;
-    }
+    [self clear];
     
     // Build the request.
     httpRequest = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[self buildRequestURL]]];

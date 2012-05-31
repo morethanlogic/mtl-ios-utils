@@ -28,6 +28,8 @@
 @property (unsafe_unretained) SEL requestSuccessSelector;
 @property (unsafe_unretained) SEL requestFailedSelector;
 
+- (void)clear;
+
 - (NSString *)buildRequestURL;
 - (NSString *)buildJSONData;
 - (void)process;
