@@ -55,6 +55,9 @@
 		47B9830215111B1000F9DA1E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47B9830115111B1000F9DA1E /* MobileCoreServices.framework */; };
 		47B9830415111B1600F9DA1E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47B9830315111B1600F9DA1E /* CoreGraphics.framework */; };
 		47B9830615111B2000F9DA1E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 47B9830515111B2000F9DA1E /* libz.dylib */; };
+		47FDFDA2158257700084F994 /* mtlViewManagement.h in Headers */ = {isa = PBXBuildFile; fileRef = 47FDFDA0158257700084F994 /* mtlViewManagement.h */; };
+		47FDFDA3158257700084F994 /* mtlViewManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FDFDA1158257700084F994 /* mtlViewManagement.m */; };
+		47FDFDAB158259230084F994 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47FDFDA8158259150084F994 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +110,9 @@
 		47B9830115111B1000F9DA1E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		47B9830315111B1600F9DA1E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		47B9830515111B2000F9DA1E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		47FDFDA0158257700084F994 /* mtlViewManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mtlViewManagement.h; sourceTree = "<group>"; };
+		47FDFDA1158257700084F994 /* mtlViewManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mtlViewManagement.m; sourceTree = "<group>"; };
+		47FDFDA8158259150084F994 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,7 @@
 				47B9830415111B1600F9DA1E /* CoreGraphics.framework in Frameworks */,
 				47B9819C1511172600F9DA1E /* Foundation.framework in Frameworks */,
 				47B9830215111B1000F9DA1E /* MobileCoreServices.framework in Frameworks */,
+				47FDFDAB158259230084F994 /* QuartzCore.framework in Frameworks */,
 				47B9830015111B0700F9DA1E /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +160,7 @@
 				47B9830315111B1600F9DA1E /* CoreGraphics.framework */,
 				47B9819B1511172600F9DA1E /* Foundation.framework */,
 				47B9830115111B1000F9DA1E /* MobileCoreServices.framework */,
+				47FDFDA8158259150084F994 /* QuartzCore.framework */,
 				47B982FF15111B0700F9DA1E /* SystemConfiguration.framework */,
 			);
 			name = Frameworks;
@@ -167,6 +175,8 @@
 				47B981B61511189600F9DA1E /* mtlStringValidation.m */,
 				47B981B71511189600F9DA1E /* mtlURLRequest.h */,
 				47B981B81511189600F9DA1E /* mtlURLRequest.m */,
+				47FDFDA0158257700084F994 /* mtlViewManagement.h */,
+				47FDFDA1158257700084F994 /* mtlViewManagement.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -292,6 +302,7 @@
 				47B982AC15111AA400F9DA1E /* ASIS3ServiceRequest.h in Headers */,
 				47B982CB15111AA400F9DA1E /* Reachability.h in Headers */,
 				473E36C9151124BA001B0409 /* mtlScrollFormViewController.h in Headers */,
+				47FDFDA2158257700084F994 /* mtlViewManagement.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +376,7 @@
 				47B982AD15111AA400F9DA1E /* ASIS3ServiceRequest.m in Sources */,
 				47B982CC15111AA400F9DA1E /* Reachability.m in Sources */,
 				473E36CA151124BA001B0409 /* mtlScrollFormViewController.m in Sources */,
+				47FDFDA3158257700084F994 /* mtlViewManagement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
