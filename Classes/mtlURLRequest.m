@@ -59,7 +59,6 @@
     
     // Build the request.
     httpRequest = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[self buildRequestURL]]];
-//    [httpRequest addRequestHeader:@"User-Agent" value:kDelightRequestHeaderUserAgent];
     [httpRequest addRequestHeader:@"Content-Type" value:@"application/json"];
     [httpRequest appendPostData:[[self buildJSONData] dataUsingEncoding:NSUTF8StringEncoding]]; 
     [httpRequest setNumberOfTimesToRetryOnTimeout:numRetries];
