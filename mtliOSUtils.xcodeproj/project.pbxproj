@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		470E0102158A4B430098C89B /* mtlScrollPagesViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 470E0100158A4B430098C89B /* mtlScrollPagesViewController.h */; };
+		470E0103158A4B430098C89B /* mtlScrollPagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 470E0101158A4B430098C89B /* mtlScrollPagesViewController.m */; };
+		470E0107158A4B5C0098C89B /* mtlPageViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 470E0105158A4B5C0098C89B /* mtlPageViewController.h */; };
+		470E0108158A4B5C0098C89B /* mtlPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 470E0106158A4B5C0098C89B /* mtlPageViewController.m */; };
 		473E36C9151124BA001B0409 /* mtlScrollFormViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 473E36C7151124BA001B0409 /* mtlScrollFormViewController.h */; };
 		473E36CA151124BA001B0409 /* mtlScrollFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 473E36C8151124BA001B0409 /* mtlScrollFormViewController.m */; };
 		47B9819C1511172600F9DA1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47B9819B1511172600F9DA1E /* Foundation.framework */; };
@@ -61,6 +65,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		470E0100158A4B430098C89B /* mtlScrollPagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mtlScrollPagesViewController.h; sourceTree = "<group>"; };
+		470E0101158A4B430098C89B /* mtlScrollPagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mtlScrollPagesViewController.m; sourceTree = "<group>"; };
+		470E0105158A4B5C0098C89B /* mtlPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mtlPageViewController.h; sourceTree = "<group>"; };
+		470E0106158A4B5C0098C89B /* mtlPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mtlPageViewController.m; sourceTree = "<group>"; };
 		473E36C7151124BA001B0409 /* mtlScrollFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mtlScrollFormViewController.h; sourceTree = "<group>"; };
 		473E36C8151124BA001B0409 /* mtlScrollFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mtlScrollFormViewController.m; sourceTree = "<group>"; };
 		47B981981511172600F9DA1E /* libmtlUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libmtlUtils.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +185,10 @@
 				47B981B81511189600F9DA1E /* mtlURLRequest.m */,
 				47FDFDA0158257700084F994 /* mtlViewManagement.h */,
 				47FDFDA1158257700084F994 /* mtlViewManagement.m */,
+				470E0100158A4B430098C89B /* mtlScrollPagesViewController.h */,
+				470E0101158A4B430098C89B /* mtlScrollPagesViewController.m */,
+				470E0105158A4B5C0098C89B /* mtlPageViewController.h */,
+				470E0106158A4B5C0098C89B /* mtlPageViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -303,6 +315,8 @@
 				47B982CB15111AA400F9DA1E /* Reachability.h in Headers */,
 				473E36C9151124BA001B0409 /* mtlScrollFormViewController.h in Headers */,
 				47FDFDA2158257700084F994 /* mtlViewManagement.h in Headers */,
+				470E0102158A4B430098C89B /* mtlScrollPagesViewController.h in Headers */,
+				470E0107158A4B5C0098C89B /* mtlPageViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +391,8 @@
 				47B982CC15111AA400F9DA1E /* Reachability.m in Sources */,
 				473E36CA151124BA001B0409 /* mtlScrollFormViewController.m in Sources */,
 				47FDFDA3158257700084F994 /* mtlViewManagement.m in Sources */,
+				470E0103158A4B430098C89B /* mtlScrollPagesViewController.m in Sources */,
+				470E0108158A4B5C0098C89B /* mtlPageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
