@@ -38,4 +38,17 @@
     [navController popViewControllerAnimated:NO];
 }
 
+//--------------------------------------------------------------
++ (void)popViewControllerModalStyle:(UINavigationController *)navController
+                   toViewController:(UIViewController *)viewControllerToPopTo
+{
+    CATransition* transition = [CATransition animation];
+    transition.duration = 0.5;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionReveal;
+    transition.subtype = kCATransitionFromBottom;
+    [navController.view.layer addAnimation:transition forKey:nil];  
+    [navController popToViewController:viewControllerToPopTo  animated:NO];
+}
+
 @end
