@@ -17,8 +17,6 @@
 		47B981B3151117BF00F9DA1E /* mtliOSUtils-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 47B981AF151117BF00F9DA1E /* mtliOSUtils-Prefix.pch */; };
 		47B981B91511189600F9DA1E /* mtlStringValidation.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B981B51511189600F9DA1E /* mtlStringValidation.h */; };
 		47B981BA1511189600F9DA1E /* mtlStringValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B981B61511189600F9DA1E /* mtlStringValidation.m */; };
-		47B981BB1511189600F9DA1E /* mtlURLRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B981B71511189600F9DA1E /* mtlURLRequest.h */; };
-		47B981BC1511189600F9DA1E /* mtlURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B981B81511189600F9DA1E /* mtlURLRequest.m */; };
 		47B9827D15111AA400F9DA1E /* ASIAuthenticationDialog.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B981DC15111AA400F9DA1E /* ASIAuthenticationDialog.h */; };
 		47B9827E15111AA400F9DA1E /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B981DD15111AA400F9DA1E /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		47B9827F15111AA400F9DA1E /* ASICacheDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B981DE15111AA400F9DA1E /* ASICacheDelegate.h */; };
@@ -76,8 +74,6 @@
 		47B981AF151117BF00F9DA1E /* mtliOSUtils-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mtliOSUtils-Prefix.pch"; sourceTree = "<group>"; };
 		47B981B51511189600F9DA1E /* mtlStringValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mtlStringValidation.h; sourceTree = "<group>"; };
 		47B981B61511189600F9DA1E /* mtlStringValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mtlStringValidation.m; sourceTree = "<group>"; };
-		47B981B71511189600F9DA1E /* mtlURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mtlURLRequest.h; sourceTree = "<group>"; };
-		47B981B81511189600F9DA1E /* mtlURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mtlURLRequest.m; sourceTree = "<group>"; };
 		47B981DC15111AA400F9DA1E /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		47B981DD15111AA400F9DA1E /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		47B981DE15111AA400F9DA1E /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -181,8 +177,6 @@
 				473E36C8151124BA001B0409 /* mtlScrollFormViewController.m */,
 				47B981B51511189600F9DA1E /* mtlStringValidation.h */,
 				47B981B61511189600F9DA1E /* mtlStringValidation.m */,
-				47B981B71511189600F9DA1E /* mtlURLRequest.h */,
-				47B981B81511189600F9DA1E /* mtlURLRequest.m */,
 				47FDFDA0158257700084F994 /* mtlViewManagement.h */,
 				47FDFDA1158257700084F994 /* mtlViewManagement.m */,
 				470E0100158A4B430098C89B /* mtlScrollPagesViewController.h */,
@@ -292,7 +286,6 @@
 			files = (
 				47B981B3151117BF00F9DA1E /* mtliOSUtils-Prefix.pch in Headers */,
 				47B981B91511189600F9DA1E /* mtlStringValidation.h in Headers */,
-				47B981BB1511189600F9DA1E /* mtlURLRequest.h in Headers */,
 				47B9827D15111AA400F9DA1E /* ASIAuthenticationDialog.h in Headers */,
 				47B9827F15111AA400F9DA1E /* ASICacheDelegate.h in Headers */,
 				47B9828015111AA400F9DA1E /* ASIDataCompressor.h in Headers */,
@@ -373,7 +366,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				47B981BA1511189600F9DA1E /* mtlStringValidation.m in Sources */,
-				47B981BC1511189600F9DA1E /* mtlURLRequest.m in Sources */,
 				47B9827E15111AA400F9DA1E /* ASIAuthenticationDialog.m in Sources */,
 				47B9828115111AA400F9DA1E /* ASIDataCompressor.m in Sources */,
 				47B9828315111AA400F9DA1E /* ASIDataDecompressor.m in Sources */,
