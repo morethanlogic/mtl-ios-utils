@@ -18,6 +18,6 @@
 + (void)popViewControllerModalStyle:(UINavigationController *)navController;
 
 + (void)popViewControllerModalStyle:(UINavigationController *)navController
-                   toViewController:(UIViewController *)viewControllerToPopTo;
+                   toViewController:(UIViewController *)toViewController;
 
 @end
