@@ -260,7 +260,7 @@
 
 //--------------------------------------------------------------
 - (void)setCurrPage
-{
+{    
     CGFloat pageSize;
     NSInteger currPageIndex;
     if (_scrollsHorizontally) {
@@ -274,7 +274,12 @@
     
     for (mtlPageViewController *vc in _visiblePageViewControllers) { 
         if (vc.index == currPageIndex) {
-            [self setCurrPageViewController:vc];
+            
+            if (currPageViewController != vc) {
+                [self setCurrPageViewController:vc];
+            } else if (currPageIndex == 0 && _scrollsHorizontally) {
+                [self pulledBeginning];
+            }
         }
     }
 }
@@ -308,6 +313,12 @@
 - (void)refreshPageViewController:(mtlPageViewController *)pageViewController atIndex:(NSInteger)index
 {
     NSLog(@"[mtlScrollPagesViewController refreshPageViewController:atIndex:] should be overridden!");
+}
+
+//--------------------------------------------------------------
+- (void)pulledBeginning
+{
+    NSLog(@"[mtlScrollPagesViewController reachedBeginning] should be overridden!");
 }
 
 @end

@@ -27,5 +27,6 @@
 
 - (mtlPageViewController *)newPageViewController;
 - (void)refreshPageViewController:(mtlPageViewController *)pageViewController atIndex:(NSInteger)index;
+- (void)pulledBeginning;
 
 @end
