@@ -18,6 +18,13 @@
 + (void)popViewControllerModalStyle:(UINavigationController *)navController;
 
 + (void)popViewControllerModalStyle:(UINavigationController *)navController
-                   toViewController:(UIViewController *)toViewController;
+                   toViewController:(UIViewController *)viewControllerToPopTo;
+
++ (void)saveAndPushViewController:(UINavigationController *)navController 
+                   viewController:(UIViewController *)viewControllerToPush
+                         animated:(BOOL)animated;
+
++ (void)popToSavedViewController:(UINavigationController *)navController
+                        animated:(BOOL)animated;
 
 @end
