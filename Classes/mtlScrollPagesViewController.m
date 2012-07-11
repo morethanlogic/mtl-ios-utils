@@ -89,10 +89,16 @@
     // Use the paging scrollView's bounds to calculate the contentSize.
     CGRect scrollBounds = pagesScrollView.bounds;
     if (_scrollsHorizontally) {
-        [pagesScrollView setContentSize:CGSizeMake(scrollBounds.size.width * _pageCount, scrollBounds.size.height)];
+        if (_pageCount == 1)
+            [pagesScrollView setContentSize:CGSizeMake(scrollBounds.size.width * _pageCount + 1, scrollBounds.size.height)];
+        else 
+            [pagesScrollView setContentSize:CGSizeMake(scrollBounds.size.width * _pageCount, scrollBounds.size.height)];
     }
     else {
-        [pagesScrollView setContentSize:CGSizeMake(scrollBounds.size.width, scrollBounds.size.height * _pageCount)];
+        if (_pageCount == 1)
+            [pagesScrollView setContentSize:CGSizeMake(scrollBounds.size.width, scrollBounds.size.height * _pageCount + 1)];
+        else
+            [pagesScrollView setContentSize:CGSizeMake(scrollBounds.size.width, scrollBounds.size.height * _pageCount)];
     }
     
     // Adjust the frame of each visible Cover view.
@@ -318,7 +324,7 @@
 //--------------------------------------------------------------
 - (void)pulledBeginning
 {
-    NSLog(@"[mtlScrollPagesViewController reachedBeginning] should be overridden!");
+    NSLog(@"[mtlScrollPagesViewController pulledBeginning] should be overridden!");
 }
 
 @end
