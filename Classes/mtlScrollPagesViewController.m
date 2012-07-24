@@ -286,6 +286,8 @@
             } else if (currPageIndex == 0 && _scrollsHorizontally) {
                 [self pulledBeginning];
             }
+            
+            [self newPageReached];
         }
     }
 }
@@ -319,6 +321,12 @@
 - (void)refreshPageViewController:(mtlPageViewController *)pageViewController atIndex:(NSInteger)index
 {
     NSLog(@"[mtlScrollPagesViewController refreshPageViewController:atIndex:] should be overridden!");
+}
+
+//--------------------------------------------------------------
+- (void)newPageReached
+{
+    NSLog(@"[mtlScrollPagesViewController newPageReached] should be overridden!");
 }
 
 //--------------------------------------------------------------
