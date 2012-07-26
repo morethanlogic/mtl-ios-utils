@@ -62,6 +62,16 @@
 //--------------------------------------------------------------
 - (void)refreshScrollView
 {
+    CGRect scrollBounds = pagesScrollView.bounds;
+    if (_scrollsHorizontally) {
+        _offsetPos = scrollBounds.size.width * _startIndex;
+        [pagesScrollView setContentOffset:CGPointMake(_offsetPos, 0)];
+    }
+    else {
+        _offsetPos = scrollBounds.size.height * _startIndex;
+        [pagesScrollView setContentOffset:CGPointMake(0, _offsetPos)];
+    }
+    
     [self tilePages:YES];
 }
 
