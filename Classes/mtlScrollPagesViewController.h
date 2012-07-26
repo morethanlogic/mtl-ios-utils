@@ -25,9 +25,12 @@
              startIndex:(NSInteger)startIndex
     scrollsHorizontally:(BOOL)scrollsHorizontally;
 
+- (void)refreshScrollView;
+
 - (mtlPageViewController *)newPageViewController;
 - (void)refreshPageViewController:(mtlPageViewController *)pageViewController atIndex:(NSInteger)index;
 - (void)newPageReached;
 - (void)pulledBeginning;
+
 
 @end

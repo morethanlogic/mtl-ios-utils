@@ -60,6 +60,12 @@
 #pragma mark - View Lifecycle
 
 //--------------------------------------------------------------
+- (void)refreshScrollView
+{
+    [self tilePages:YES];
+}
+
+//--------------------------------------------------------------
 - (void)viewDidLoad
 {
     [super viewDidLoad];
