@@ -62,15 +62,12 @@
 //--------------------------------------------------------------
 - (void)refreshScrollView
 {
-    CGRect scrollBounds = pagesScrollView.bounds;
-    if (_scrollsHorizontally) {
-        _offsetPos = scrollBounds.size.width * _startIndex;
-        [pagesScrollView setContentOffset:CGPointMake(_offsetPos, 0)];
+    // Clear the UIScrollView
+    for (mtlPageViewController *vc in _visiblePageViewControllers) {
+        [_recycledPageViewControllers addObject:vc];
+        [vc.view removeFromSuperview];
     }
-    else {
-        _offsetPos = scrollBounds.size.height * _startIndex;
-        [pagesScrollView setContentOffset:CGPointMake(0, _offsetPos)];
-    }
+    [_visiblePageViewControllers minusSet:_recycledPageViewControllers];
     
     [self tilePages:YES];
 }
