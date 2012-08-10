@@ -21,6 +21,8 @@
 		47FDFDA2158257700084F994 /* mtlViewManagement.h in Headers */ = {isa = PBXBuildFile; fileRef = 47FDFDA0158257700084F994 /* mtlViewManagement.h */; };
 		47FDFDA3158257700084F994 /* mtlViewManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FDFDA1158257700084F994 /* mtlViewManagement.m */; };
 		47FDFDAB158259230084F994 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47FDFDA8158259150084F994 /* QuartzCore.framework */; };
+		F3A0C7BC15D5908B00DACF67 /* mtlElapsedTime.h in Headers */ = {isa = PBXBuildFile; fileRef = F3A0C7BA15D5908B00DACF67 /* mtlElapsedTime.h */; };
+		F3A0C7BD15D5908B00DACF67 /* mtlElapsedTime.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A0C7BB15D5908B00DACF67 /* mtlElapsedTime.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		47FDFDA0158257700084F994 /* mtlViewManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mtlViewManagement.h; sourceTree = "<group>"; };
 		47FDFDA1158257700084F994 /* mtlViewManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mtlViewManagement.m; sourceTree = "<group>"; };
 		47FDFDA8158259150084F994 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F3A0C7BA15D5908B00DACF67 /* mtlElapsedTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mtlElapsedTime.h; sourceTree = "<group>"; };
+		F3A0C7BB15D5908B00DACF67 /* mtlElapsedTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mtlElapsedTime.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,8 @@
 		47B981AB151117BF00F9DA1E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F3A0C7BA15D5908B00DACF67 /* mtlElapsedTime.h */,
+				F3A0C7BB15D5908B00DACF67 /* mtlElapsedTime.m */,
 				473E36C7151124BA001B0409 /* mtlScrollFormViewController.h */,
 				473E36C8151124BA001B0409 /* mtlScrollFormViewController.m */,
 				47B981B51511189600F9DA1E /* mtlStringValidation.h */,
@@ -129,6 +135,7 @@
 				47FDFDA2158257700084F994 /* mtlViewManagement.h in Headers */,
 				470E0102158A4B430098C89B /* mtlScrollPagesViewController.h in Headers */,
 				470E0107158A4B5C0098C89B /* mtlPageViewController.h in Headers */,
+				F3A0C7BC15D5908B00DACF67 /* mtlElapsedTime.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +196,7 @@
 				47FDFDA3158257700084F994 /* mtlViewManagement.m in Sources */,
 				470E0103158A4B430098C89B /* mtlScrollPagesViewController.m in Sources */,
 				470E0108158A4B5C0098C89B /* mtlPageViewController.m in Sources */,
+				F3A0C7BD15D5908B00DACF67 /* mtlElapsedTime.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
