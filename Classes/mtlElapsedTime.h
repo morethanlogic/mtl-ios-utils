@@ -12,6 +12,6 @@
 //--------------------------------------------------------------
 @interface mtlElapsedTime : NSObject
 
-+ (NSString*)updatedOn:(NSDate *)fromUTCDate;
++ (NSString *)updatedOn:(NSDate *)fromUTCDate;
 
 @end
