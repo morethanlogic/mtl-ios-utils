@@ -9,7 +9,7 @@
 #import "mtlViewManagement.h"
 #import <QuartzCore/QuartzCore.h>
 
-static UIViewController *_savedViewController = nil;
+static NSMutableArray *_savedViewControllerStack = nil;
 
 //--------------------------------------------------------------
 //--------------------------------------------------------------
@@ -58,7 +58,11 @@ static UIViewController *_savedViewController = nil;
                    viewController:(UIViewController *)viewControllerToPush
                          animated:(BOOL)animated
 {
-    _savedViewController = navController.visibleViewController;
+    // Push the current view controller on top of the stack.
+    if (_savedViewControllerStack == nil) {
+        _savedViewControllerStack = [NSMutableArray arrayWithCapacity:1];
+    }
+    [_savedViewControllerStack addObject:navController.visibleViewController];
     
     [navController pushViewController:viewControllerToPush 
                              animated:animated];
@@ -68,13 +72,29 @@ static UIViewController *_savedViewController = nil;
 + (void)popToSavedViewController:(UINavigationController *)navController
                         animated:(BOOL)animated
 {
-    if (_savedViewController != nil) {
-        [navController popToViewController:_savedViewController animated:animated];
+    UIViewController *savedViewController = [mtlViewManagement popSavedViewController];
+    if (savedViewController != nil) {
+        [navController popToViewController:savedViewController
+                                  animated:animated];
     }
     else {
-        NSLog(@"[mtlViewManagement popToSavedViewControllerModalStyle:] WARNING, No saved UIViewController found!");
+        NSLog(@"[mtlViewManagement popToSavedViewController:animated:] WARNING, No saved UIViewController found!");
         [navController popViewControllerAnimated:animated];
     }
+}
+
+//--------------------------------------------------------------
++ (UIViewController *)popSavedViewController
+{
+    if (_savedViewControllerStack != nil && [_savedViewControllerStack count] > 0) {
+        // Pop the last view controller saved to the stack.
+        UIViewController *savedViewController = [_savedViewControllerStack lastObject];
+        [_savedViewControllerStack removeLastObject];
+
+        return savedViewController;
+    }
+
+    return nil;
 }
 
 //--------------------------------------------------------------

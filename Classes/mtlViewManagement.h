@@ -27,6 +27,8 @@
 + (void)popToSavedViewController:(UINavigationController *)navController
                         animated:(BOOL)animated;
 
++ (UIViewController *)popSavedViewController;
+
 + (void)presentModalViewController:(UIViewController *)presentingViewController
                     viewController:(UIViewController *)viewControllerToPresent
                           animated:(BOOL)animated;
