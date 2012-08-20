@@ -15,60 +15,55 @@
 //--------------------------------------------------------------
 + (NSString *)updatedOn:(NSDate *)fromUTCDate
 {
-    // Date
-    NSDateComponents *comps = [[NSDateComponents alloc] init];
-    [comps setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+    static NSDateComponents *comps;
+    if (comps == nil) {
+        comps = [[NSDateComponents alloc] init];
+        [comps setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+    }
     
-    // Get the system calendar
+    // Get the system date.
     NSCalendar *sysCalendar = [NSCalendar currentCalendar];
-    NSDate* sourceDate = [sysCalendar dateByAddingComponents:comps toDate:[NSDate date] options:0];
+    NSDate* sourceDate = [sysCalendar dateByAddingComponents:comps
+                                                      toDate:[NSDate date]
+                                                     options:0];
     
-    // Get conversion to months, days, hours, minutes
-    unsigned int unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit;
-    
-    NSDateComponents *conversionInfo = [sysCalendar components:unitFlags fromDate:fromUTCDate  toDate:sourceDate  options:0];
-    
-    NSString *dateString;
-    NSString *prefixString = @"Updated";
+    // Get the date interval conversion.
+    unsigned int unitFlags = NSSecondCalendarUnit | NSMinuteCalendarUnit | NSHourCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit;
+    NSDateComponents *conversionInfo = [sysCalendar components:unitFlags
+                                                      fromDate:fromUTCDate
+                                                        toDate:sourceDate
+                                                       options:0];
+
+    // Return the formatted date string.
+    static NSString *kPrefixString = @"Updated";
     
     if ([conversionInfo month] > 0 || [conversionInfo day] > 3) {
-        // Older than 3 days - let's display the date
         NSDateFormatter *format = [[NSDateFormatter alloc] init];
         if ([conversionInfo year] > 1) {
-            dateString = [prefixString stringByAppendingString:@" in "];
+            // Older than 1 year, display "Updated in June 2012"
             [format setDateFormat:@"MMM yyyy"];
+            return [NSString stringWithFormat:@"%@ in %@", kPrefixString, [format stringFromDate:fromUTCDate]];
         }
-        else {
-            dateString = [prefixString stringByAppendingString:@" on "];
-            [format setDateFormat:@"MMM dd"];
-        }
-        NSString *lastPostDateString = [format stringFromDate:fromUTCDate];
-        dateString = [dateString stringByAppendingString:lastPostDateString];
+
+        // Older than 3 days but less than 1 year, display "Updated on June 3"
+        [format setDateFormat:@"MMM d"];
+        return [NSString stringWithFormat:@"%@ on %@", kPrefixString, [format stringFromDate:fromUTCDate]];
     }
-    else if([conversionInfo day] > 0) {
-        // Older than 1 day - display "x day ago"
-        dateString = [prefixString stringByAppendingString:[NSString stringWithFormat: @" %.d", [conversionInfo day]]];
-        if ([conversionInfo day] < 2) {
-            dateString = [dateString stringByAppendingString:@" day ago"];
-        }
-        else {
-            dateString = [dateString stringByAppendingString:@" days ago"];
-        }
+    else if ([conversionInfo day] > 0) {
+        // Older than 1 day, display "Updated 3 days ago"
+        return [NSString stringWithFormat:@"%@ %d day%@ ago", kPrefixString, [conversionInfo day], ([conversionInfo day] == 1)? @"":@"s"];
     }
     else if ([conversionInfo hour] > 0) {
-        dateString = [prefixString stringByAppendingString:[NSString stringWithFormat: @" %.d", [conversionInfo hour]]];
-        dateString = [dateString stringByAppendingString:@" hours ago"];
+        // Older than 1 hour, display "Updated 3 hours ago"
+        return [NSString stringWithFormat:@"%@ %d hour%@ ago", kPrefixString, [conversionInfo hour], ([conversionInfo hour] == 1)? @"":@"s"];
     }
     else if ([conversionInfo minute] > 0) {
-        dateString = [prefixString stringByAppendingString:[NSString stringWithFormat: @" %.d", [conversionInfo minute]]];
-        dateString = [dateString stringByAppendingString:@" minutes ago"];
+        // Older than 1 minute, display "Updated 3 minutes ago"
+        return [NSString stringWithFormat:@"%@ %d minute%@ ago", kPrefixString, [conversionInfo minute], ([conversionInfo minute] == 1)? @"":@"s"];
     }
-    else if ([conversionInfo second] > 0) {
-        dateString = [prefixString stringByAppendingString:[NSString stringWithFormat: @" %.d", [conversionInfo second]]];
-        dateString = [dateString stringByAppendingString:@" seconds ago"];
-    }
-    
-    return dateString;
+
+    // Less than 1 minute old, display "Updated 3 seconds ago"
+    return [NSString stringWithFormat:@"%@ %d second%@ ago", kPrefixString, [conversionInfo second], ([conversionInfo second] == 1)? @"":@"s"];
 }
 
 @end
