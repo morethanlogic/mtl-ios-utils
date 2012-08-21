@@ -118,8 +118,8 @@ static NSMutableArray *_savedViewControllerStack = nil;
                           animated:(BOOL)animated
 {
     if ([viewControllerToDismiss respondsToSelector:@selector(presentingViewController)]) {
-        [viewControllerToDismiss dismissViewControllerAnimated:animated
-                                                    completion:nil];
+        [[viewControllerToDismiss presentingViewController] dismissViewControllerAnimated:animated
+                                                                               completion:nil];
     }
     else {
         [viewControllerToDismiss dismissModalViewControllerAnimated:animated];
