@@ -15,8 +15,8 @@
 		473E36CA151124BA001B0409 /* mtlScrollFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 473E36C8151124BA001B0409 /* mtlScrollFormViewController.m */; };
 		47B9819C1511172600F9DA1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47B9819B1511172600F9DA1E /* Foundation.framework */; };
 		47B981B3151117BF00F9DA1E /* mtliOSUtils-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 47B981AF151117BF00F9DA1E /* mtliOSUtils-Prefix.pch */; };
-		47B981B91511189600F9DA1E /* mtlStringValidation.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B981B51511189600F9DA1E /* mtlStringValidation.h */; };
-		47B981BA1511189600F9DA1E /* mtlStringValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B981B61511189600F9DA1E /* mtlStringValidation.m */; };
+		47B981B91511189600F9DA1E /* NSString+Validation.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B981B51511189600F9DA1E /* NSString+Validation.h */; };
+		47B981BA1511189600F9DA1E /* NSString+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B981B61511189600F9DA1E /* NSString+Validation.m */; };
 		47B9830415111B1600F9DA1E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47B9830315111B1600F9DA1E /* CoreGraphics.framework */; };
 		47FDFDA2158257700084F994 /* mtlViewManagement.h in Headers */ = {isa = PBXBuildFile; fileRef = 47FDFDA0158257700084F994 /* mtlViewManagement.h */; };
 		47FDFDA3158257700084F994 /* mtlViewManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FDFDA1158257700084F994 /* mtlViewManagement.m */; };
@@ -37,8 +37,8 @@
 		47B981981511172600F9DA1E /* libmtlUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libmtlUtils.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		47B9819B1511172600F9DA1E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		47B981AF151117BF00F9DA1E /* mtliOSUtils-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mtliOSUtils-Prefix.pch"; sourceTree = "<group>"; };
-		47B981B51511189600F9DA1E /* mtlStringValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mtlStringValidation.h; sourceTree = "<group>"; };
-		47B981B61511189600F9DA1E /* mtlStringValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mtlStringValidation.m; sourceTree = "<group>"; };
+		47B981B51511189600F9DA1E /* NSString+Validation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Validation.h"; sourceTree = "<group>"; };
+		47B981B61511189600F9DA1E /* NSString+Validation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Validation.m"; sourceTree = "<group>"; };
 		47B9830315111B1600F9DA1E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		47FDFDA0158257700084F994 /* mtlViewManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mtlViewManagement.h; sourceTree = "<group>"; };
 		47FDFDA1158257700084F994 /* mtlViewManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mtlViewManagement.m; sourceTree = "<group>"; };
@@ -99,8 +99,6 @@
 				F3A0C7BB15D5908B00DACF67 /* mtlElapsedTime.m */,
 				473E36C7151124BA001B0409 /* mtlScrollFormViewController.h */,
 				473E36C8151124BA001B0409 /* mtlScrollFormViewController.m */,
-				47B981B51511189600F9DA1E /* mtlStringValidation.h */,
-				47B981B61511189600F9DA1E /* mtlStringValidation.m */,
 				47FDFDA0158257700084F994 /* mtlViewManagement.h */,
 				47FDFDA1158257700084F994 /* mtlViewManagement.m */,
 				470E0100158A4B430098C89B /* mtlScrollPagesViewController.h */,
@@ -109,6 +107,8 @@
 				470E0106158A4B5C0098C89B /* mtlPageViewController.m */,
 				64B2EE8A15E67F71003DE672 /* NSString+Split.h */,
 				64B2EE8B15E67F71003DE672 /* NSString+Split.m */,
+				47B981B51511189600F9DA1E /* NSString+Validation.h */,
+				47B981B61511189600F9DA1E /* NSString+Validation.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -136,7 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47B981B3151117BF00F9DA1E /* mtliOSUtils-Prefix.pch in Headers */,
-				47B981B91511189600F9DA1E /* mtlStringValidation.h in Headers */,
+				47B981B91511189600F9DA1E /* NSString+Validation.h in Headers */,
 				473E36C9151124BA001B0409 /* mtlScrollFormViewController.h in Headers */,
 				47FDFDA2158257700084F994 /* mtlViewManagement.h in Headers */,
 				470E0102158A4B430098C89B /* mtlScrollPagesViewController.h in Headers */,
@@ -198,7 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47B981BA1511189600F9DA1E /* mtlStringValidation.m in Sources */,
+				47B981BA1511189600F9DA1E /* NSString+Validation.m in Sources */,
 				473E36CA151124BA001B0409 /* mtlScrollFormViewController.m in Sources */,
 				47FDFDA3158257700084F994 /* mtlViewManagement.m in Sources */,
 				470E0103158A4B430098C89B /* mtlScrollPagesViewController.m in Sources */,

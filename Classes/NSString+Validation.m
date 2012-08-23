@@ -6,100 +6,95 @@
 //  Copyright (c) 2012 Departement. All rights reserved.
 //
 
-#import "mtlStringValidation.h"
+#import "NSString+Validation.h"
 
 //--------------------------------------------------------------
 //--------------------------------------------------------------
-@implementation StringValidation
+@implementation NSString (Validation)
 
 //--------------------------------------------------------------
-+ (BOOL)validateNotEmpty:(NSString *)candidate
+- (BOOL)validateNotEmpty
 {
-    return ([candidate length] != 0);
+    return ([self length] != 0);
 }
 
 //--------------------------------------------------------------
-+ (BOOL)validateMinimumLength:(NSString *)candidate 
-                    parameter:(int)length
+- (BOOL)validateMinimumLength:(NSInteger)length
 {
-    return ([candidate length] >= length);
+    return ([self length] >= length);
 }
 
 //--------------------------------------------------------------
-+ (BOOL)validateMaximumLength:(NSString *)candidate 
-                    parameter:(int)length
+- (BOOL)validateMaximumLength:(NSInteger)length
 {
-    return ([candidate length] <= length);
+    return ([self length] <= length);
 }
 
 //--------------------------------------------------------------
-+ (BOOL)validateMatchesConfirmation:(NSString *)candidate 
-                          parameter:(NSString *)confirmation 
+- (BOOL)validateMatchesConfirmation:(NSString *)confirmation 
 {
-    return [candidate isEqualToString:confirmation];
+    return [self isEqualToString:confirmation];
 }
 
 //--------------------------------------------------------------
-+ (BOOL)validateStringInCharacterSet:(NSString *)string 
-                        characterSet:(NSMutableCharacterSet *)characterSet
+- (BOOL)validateInCharacterSet:(NSMutableCharacterSet *)characterSet
 {
-    return ([string rangeOfCharacterFromSet:[characterSet invertedSet]].location == NSNotFound);
+    return ([self rangeOfCharacterFromSet:[characterSet invertedSet]].location == NSNotFound);
 }
 
 //--------------------------------------------------------------
-+ (BOOL)validateAlpha:(NSString *)candidate 
+- (BOOL)validateAlpha
 {
-    return [self validateStringInCharacterSet:candidate characterSet:[NSCharacterSet letterCharacterSet]];
+    return [self validateInCharacterSet:[NSCharacterSet letterCharacterSet]];
 }
 
 //--------------------------------------------------------------
-+ (BOOL)validateAlphanumeric:(NSString *)candidate
+- (BOOL)validateAlphanumeric
 {
-    return [self validateStringInCharacterSet:candidate characterSet:[NSCharacterSet alphanumericCharacterSet]];
+    return [self validateInCharacterSet:[NSCharacterSet alphanumericCharacterSet]];
 }
 
 //--------------------------------------------------------------
-+ (BOOL)validateNumeric:(NSString *)candidate
+- (BOOL)validateNumeric
 {
-    return [self validateStringInCharacterSet:candidate characterSet:[NSCharacterSet decimalDigitCharacterSet]];
+    return [self validateInCharacterSet:[NSCharacterSet decimalDigitCharacterSet]];
 }
 
 //--------------------------------------------------------------
-+ (BOOL)validateAlphaSpace:(NSString *)candidate
+- (BOOL)validateAlphaSpace
 {
     NSMutableCharacterSet *characterSet = [NSMutableCharacterSet letterCharacterSet];
     [characterSet addCharactersInString:@" "];
-    return [self validateStringInCharacterSet:candidate characterSet:characterSet];
+    return [self validateInCharacterSet:characterSet];
 }
 
 //--------------------------------------------------------------
-+ (BOOL)validateAlphanumericSpace:(NSString *)candidate
+- (BOOL)validateAlphanumericSpace
 {
     NSMutableCharacterSet *characterSet = [NSMutableCharacterSet alphanumericCharacterSet];
     [characterSet addCharactersInString:@" "];
-    return [self validateStringInCharacterSet:candidate characterSet:characterSet];
+    return [self validateInCharacterSet:characterSet];
 }
 
 //--------------------------------------------------------------
 // Alphanumeric characters, underscore (_), and period (.)
-+ (BOOL)validateUsername:(NSString *)candidate 
+- (BOOL)validateUsername 
 {
     NSMutableCharacterSet *characterSet = [NSMutableCharacterSet alphanumericCharacterSet];
     [characterSet addCharactersInString:@"'_."];
-    return [self validateStringInCharacterSet:candidate characterSet:characterSet];
+    return [self validateInCharacterSet:characterSet];
 }
 
 //--------------------------------------------------------------
 // http://stackoverflow.com/questions/3139619/check-that-an-email-address-is-valid-on-ios
 // http://blog.logichigh.com/2010/09/02/validating-an-e-mail-address/
-+ (BOOL)validateEmail:(NSString *)candidate
-       stricterFilter:(BOOL)stricterFilter
+- (BOOL)validateEmail:(BOOL)stricterFilter
 {
     NSString *stricterFilterString = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
     NSString *laxString = @".+@.+\\.[A-Za-z]{2}[A-Za-z]*";
     NSString *emailRegex = stricterFilter ? stricterFilterString : laxString;
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
-    return [emailTest evaluateWithObject:candidate];
+    return [emailTest evaluateWithObject:self];
 }
 
 @end
