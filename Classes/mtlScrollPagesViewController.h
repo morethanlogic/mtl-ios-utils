@@ -20,10 +20,13 @@
 @property (assign, nonatomic) NSInteger pageCount;
 @property (assign, nonatomic) NSInteger startIndex;
 @property (assign, nonatomic) BOOL scrollsHorizontally;
+@property (assign, nonatomic) BOOL bounces;
+
 
 - (id)initWithPageCount:(NSInteger)pageCount 
              startIndex:(NSInteger)startIndex
-    scrollsHorizontally:(BOOL)scrollsHorizontally;
+    scrollsHorizontally:(BOOL)scrollsHorizontally
+    bounces:(BOOL)bounces;
 
 - (void)refreshScrollView;
 

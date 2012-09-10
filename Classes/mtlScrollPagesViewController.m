@@ -40,6 +40,8 @@
 @synthesize pageCount = _pageCount;
 @synthesize startIndex = _startIndex;
 @synthesize scrollsHorizontally = _scrollsHorizontally;
+@synthesize bounces = _bounces;
+
 
 #pragma mark - Initialization
 
@@ -47,12 +49,14 @@
 - (id)initWithPageCount:(NSInteger)pageCount 
              startIndex:(NSInteger)startIndex 
     scrollsHorizontally:(BOOL)scrollsHorizontally
+    bounces:(BOOL)bounces
 {
     self = [super init];
     if (self) {
         [self setPageCount:pageCount];
         [self setStartIndex:startIndex];
         [self setScrollsHorizontally:scrollsHorizontally];
+        [self setBounces:bounces];
     }
     return self;
 }
@@ -284,6 +288,11 @@
     
     if (shouldSetCurrPage) {
         [self setCurrPage];
+    }
+    
+    if (_bounces) {
+        // Need to reset the 'bounces' BOOL every time we touch/update the scrollview.
+        self.pagesScrollView.bounces = YES;
     }
 }
 
