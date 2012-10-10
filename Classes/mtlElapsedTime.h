@@ -13,5 +13,6 @@
 @interface mtlElapsedTime : NSObject
 
 + (NSString *)updatedOn:(NSDate *)fromUTCDate prefixString:(NSString *)prefixString;
++ (NSString *)delaySinceLastUpdate:(NSDate *)fromUTCDate;
 
 @end

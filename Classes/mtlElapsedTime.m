@@ -10,10 +10,18 @@
 
 //--------------------------------------------------------------
 //--------------------------------------------------------------
+@interface mtlElapsedTime ()
+
++ (NSDateComponents *)dateIntervalConversion:(NSDate *)fromUTCDate;
+
+@end
+
+//--------------------------------------------------------------
+//--------------------------------------------------------------
 @implementation mtlElapsedTime
 
 //--------------------------------------------------------------
-+ (NSString *)updatedOn:(NSDate *)fromUTCDate prefixString:(NSString *)prefixString;
++ (NSDateComponents *)dateIntervalConversion:(NSDate *)fromUTCDate
 {
     static NSDateComponents *comps;
     if (comps == nil) {
@@ -33,6 +41,14 @@
                                                       fromDate:fromUTCDate
                                                         toDate:sourceDate
                                                        options:0];
+    
+    return conversionInfo;
+}
+
+//--------------------------------------------------------------
++ (NSString *)updatedOn:(NSDate *)fromUTCDate prefixString:(NSString *)prefixString;
+{
+    NSDateComponents *conversionInfo = [self dateIntervalConversion:fromUTCDate];
 
     // Return the formatted date string.    
     if ([conversionInfo month] > 0 || [conversionInfo day] > 3) {
@@ -63,5 +79,41 @@
     // Less than 1 minute old, display "Updated 3 seconds ago"
     return [NSString stringWithFormat:@"%@ %d second%@ ago", prefixString, [conversionInfo second], ([conversionInfo second] == 1)? @"":@"s"];
 }
+
+//--------------------------------------------------------------
++ (NSString *)delaySinceLastUpdate:(NSDate *)fromUTCDate
+{
+    NSDateComponents *conversionInfo = [self dateIntervalConversion:fromUTCDate];
+    
+    // Return the formatted date string.
+    if ([conversionInfo month] > 0 || [conversionInfo day] > 3) {
+        NSDateFormatter *format = [[NSDateFormatter alloc] init];
+        if ([conversionInfo year] > 1) {
+            // Older than 1 year, display "June 2012"
+            [format setDateFormat:@"MMM yyyy"];
+            return [format stringFromDate:fromUTCDate];
+        }
+        
+        // Older than 3 days but less than 1 year, display "June 3"
+        [format setDateFormat:@"MMM d"];
+        return [format stringFromDate:fromUTCDate];
+    }
+    else if ([conversionInfo day] > 0) {
+        // Older than 1 day, display "3d"
+        return [NSString stringWithFormat:@"%dd", [conversionInfo day]];
+    }
+    else if ([conversionInfo hour] > 0) {
+        // Older than 1 hour, display "3h"
+        return [NSString stringWithFormat:@"%dh", [conversionInfo hour]];
+    }
+    else if ([conversionInfo minute] > 0) {
+        // Older than 1 minute, display "3m"
+        return [NSString stringWithFormat:@"%dm", [conversionInfo minute]];
+    }
+    
+    // Less than 1 minute old, display "3s"
+    return [NSString stringWithFormat:@"%ds", [conversionInfo second]];
+}
+
 
 @end
