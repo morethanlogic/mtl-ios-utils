@@ -97,33 +97,4 @@ static NSMutableArray *_savedViewControllerStack = nil;
     return nil;
 }
 
-//--------------------------------------------------------------
-+ (void)presentModalViewController:(UIViewController *)presentingViewController
-                    viewController:(UIViewController *)viewControllerToPresent
-                          animated:(BOOL)animated
-{
-    if ([presentingViewController respondsToSelector:@selector(presentViewController:animated:completion:)]) {
-        [presentingViewController presentViewController:viewControllerToPresent
-                                               animated:animated
-                                             completion:nil];
-    }
-    else {
-        [presentingViewController presentModalViewController:viewControllerToPresent
-                                                    animated:animated];
-    }
-}
-
-//--------------------------------------------------------------
-+ (void)dismissModalViewController:(UIViewController *)viewControllerToDismiss
-                          animated:(BOOL)animated
-{
-    if ([viewControllerToDismiss respondsToSelector:@selector(dismissViewControllerAnimated:completion:)]) {
-        [viewControllerToDismiss dismissViewControllerAnimated:animated
-                                                    completion:nil];
-    }
-    else {
-        [viewControllerToDismiss dismissModalViewControllerAnimated:animated];
-    }
-}
-
 @end

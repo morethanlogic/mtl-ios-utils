@@ -29,11 +29,4 @@
 
 + (UIViewController *)popSavedViewController;
 
-+ (void)presentModalViewController:(UIViewController *)presentingViewController
-                    viewController:(UIViewController *)viewControllerToPresent
-                          animated:(BOOL)animated;
-
-+ (void)dismissModalViewController:(UIViewController *)viewControllerToDismiss
-                          animated:(BOOL)animated;
-
 @end
