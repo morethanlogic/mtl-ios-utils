@@ -9,7 +9,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define mtlLocalizedString(key, comment) [[mtlLocalization sharedInstance] localizedStringForKey:(key) value:(comment)]
+#define mtlLocalizedString(key) [[mtlLocalization sharedInstance] localizedStringForKey:(key) value:(key)]
 
 //--------------------------------------------------------------
 //--------------------------------------------------------------
