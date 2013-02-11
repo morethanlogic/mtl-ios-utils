@@ -34,8 +34,14 @@ static NSString *language;
 		bundle = [NSBundle mainBundle];
 
         // Set the starting language.
-        NSArray* languages = [[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"];
-        [self setLanguage:[languages objectAtIndex:0]];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        if ([defaults objectForKey:@"mtl_preferred_language"] != nil) {
+            [self setLanguage:[defaults stringForKey:@"mtl_preferred_language"]];
+        }
+        else {
+            NSArray* languages = [[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"];
+            [self setLanguage:[languages objectAtIndex:0]];
+        }
 	}
     return self;
 }
@@ -48,10 +54,16 @@ static NSString *language;
     NSString *path = [[NSBundle mainBundle] pathForResource:lang
                                                      ofType:@"lproj"];
 
-	if (path == nil)
+	if (path == nil) {
 		[self resetLanguage];
-	else
+    }
+    else {
 		bundle = [NSBundle bundleWithPath:path];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:lang
+                     forKey:@"mtl_preferred_language"];
+        [defaults synchronize];
+    }
 
     language = lang;
 }
@@ -60,6 +72,10 @@ static NSString *language;
 - (void)resetLanguage
 {
     bundle = [NSBundle mainBundle];
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:@"mtl_preferred_language"];
+    [defaults synchronize];
 }
 
 //--------------------------------------------------------------
