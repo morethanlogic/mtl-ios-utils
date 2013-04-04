@@ -27,5 +27,6 @@
 
 - (BOOL)validateUsername;
 - (BOOL)validateEmail:(BOOL)stricterFilter;
+- (BOOL)validatePhoneNumber;
 
 @end

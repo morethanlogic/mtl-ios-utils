@@ -97,4 +97,12 @@
     return [emailTest evaluateWithObject:self];
 }
 
+//--------------------------------------------------------------
+- (BOOL)validatePhoneNumber
+{
+    NSMutableCharacterSet *characterSet = [NSMutableCharacterSet decimalDigitCharacterSet];
+    [characterSet addCharactersInString:@"'-.*+ "];
+    return [self validateInCharacterSet:characterSet];
+}
+
 @end
