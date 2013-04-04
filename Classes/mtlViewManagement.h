@@ -12,23 +12,23 @@
 //--------------------------------------------------------------
 @interface mtlViewManagement : NSObject
 
-+ (void)pushViewControllerModalStyle:(UINavigationController *)navController 
-                      viewController:(UIViewController *)viewControllerToPush;
++ (void)pushModalStyle:(UINavigationController *)navController 
+        viewController:(UIViewController *)viewControllerToPush;
 
-+ (void)popViewControllerModalStyle:(UINavigationController *)navController;
++ (void)popModalStyle:(UINavigationController *)navController;
 
 + (void)popModalStyleToRootViewController:(UINavigationController *)navController;
 
-+ (void)popViewControllerModalStyle:(UINavigationController *)navController
-                   toViewController:(UIViewController *)viewControllerToPopTo;
++ (void)popModalStyle:(UINavigationController *)navController
+     toViewController:(UIViewController *)viewControllerToPopTo;
 
-+ (void)saveAndPushViewController:(UINavigationController *)navController 
-                   viewController:(UIViewController *)viewControllerToPush
-                         animated:(BOOL)animated;
++ (void)saveAndPush:(UINavigationController *)navController 
+     viewController:(UIViewController *)viewControllerToPush
+           animated:(BOOL)animated;
 
-+ (void)popToSavedViewController:(UINavigationController *)navController
-                        animated:(BOOL)animated;
++ (void)popToSaved:(UINavigationController *)navController
+          animated:(BOOL)animated;
 
-+ (UIViewController *)popSavedViewController;
++ (UIViewController *)popSavedViewControllerStack;
 
 @end

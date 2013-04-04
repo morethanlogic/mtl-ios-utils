@@ -49,8 +49,8 @@ static NSMutableArray *_savedViewControllerStack = nil;
 }
 
 //--------------------------------------------------------------
-+ (void)pushViewControllerModalStyle:(UINavigationController *)navController 
-                      viewController:(UIViewController *)viewControllerToPush
++ (void)pushModalStyle:(UINavigationController *)navController 
+        viewController:(UIViewController *)viewControllerToPush
 {
     [navController.view.layer addAnimation:[[self class] presentModalTransition]
                                     forKey:nil];
@@ -59,7 +59,7 @@ static NSMutableArray *_savedViewControllerStack = nil;
 }
 
 //--------------------------------------------------------------
-+ (void)popViewControllerModalStyle:(UINavigationController *)navController
++ (void)popModalStyle:(UINavigationController *)navController
 {
     [navController.view.layer addAnimation:[[self class] dismissModalTransition]
                                     forKey:nil];
@@ -75,8 +75,8 @@ static NSMutableArray *_savedViewControllerStack = nil;
 }
 
 //--------------------------------------------------------------
-+ (void)popViewControllerModalStyle:(UINavigationController *)navController
-                   toViewController:(UIViewController *)viewControllerToPopTo
++ (void)popModalStyle:(UINavigationController *)navController
+     toViewController:(UIViewController *)viewControllerToPopTo
 {
 
     [navController.view.layer addAnimation:[[self class] dismissModalTransition]
@@ -86,9 +86,9 @@ static NSMutableArray *_savedViewControllerStack = nil;
 }
 
 //--------------------------------------------------------------
-+ (void)saveAndPushViewController:(UINavigationController *)navController 
-                   viewController:(UIViewController *)viewControllerToPush
-                         animated:(BOOL)animated
++ (void)saveAndPush:(UINavigationController *)navController 
+     viewController:(UIViewController *)viewControllerToPush
+           animated:(BOOL)animated
 {
     // Push the current view controller on top of the stack.
     if (_savedViewControllerStack == nil) {
@@ -101,10 +101,10 @@ static NSMutableArray *_savedViewControllerStack = nil;
 }
 
 //--------------------------------------------------------------
-+ (void)popToSavedViewController:(UINavigationController *)navController
-                        animated:(BOOL)animated
++ (void)popToSaved:(UINavigationController *)navController
+          animated:(BOOL)animated
 {
-    UIViewController *savedViewController = [mtlViewManagement popSavedViewController];
+    UIViewController *savedViewController = [mtlViewManagement popSavedViewControllerStack];
     if (savedViewController != nil) {
         [navController popToViewController:savedViewController
                                   animated:animated];
@@ -116,7 +116,7 @@ static NSMutableArray *_savedViewControllerStack = nil;
 }
 
 //--------------------------------------------------------------
-+ (UIViewController *)popSavedViewController
++ (UIViewController *)popSavedViewControllerStack
 {
     if (_savedViewControllerStack != nil && [_savedViewControllerStack count] > 0) {
         // Pop the last view controller saved to the stack.
