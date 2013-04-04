@@ -67,6 +67,14 @@ static NSMutableArray *_savedViewControllerStack = nil;
 }
 
 //--------------------------------------------------------------
++ (void)popModalStyleToRootViewController:(UINavigationController *)navController
+{
+    [navController.view.layer addAnimation:[[self class] dismissModalTransition]
+                                    forKey:nil];
+    [navController popToRootViewControllerAnimated:NO];
+}
+
+//--------------------------------------------------------------
 + (void)popViewControllerModalStyle:(UINavigationController *)navController
                    toViewController:(UIViewController *)viewControllerToPopTo
 {
