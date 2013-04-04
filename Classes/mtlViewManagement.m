@@ -13,30 +13,56 @@ static NSMutableArray *_savedViewControllerStack = nil;
 
 //--------------------------------------------------------------
 //--------------------------------------------------------------
+@interface mtlViewManagement ()
+
++ (CATransition *)presentModalTransition;
++ (CATransition *)dismissModalTransition;
+
+@end
+
+//--------------------------------------------------------------
+//--------------------------------------------------------------
 @implementation mtlViewManagement
 
 //--------------------------------------------------------------
-+ (void)pushViewControllerModalStyle:(UINavigationController *)navController 
-                      viewController:(UIViewController *)viewControllerToPush
++ (CATransition *)presentModalTransition
 {
-    CATransition* transition = [CATransition animation];
+    CATransition *transition = [CATransition animation];
     transition.duration = 0.5;
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     transition.type = kCATransitionMoveIn;
     transition.subtype = kCATransitionFromTop;
-    [navController.view.layer addAnimation:transition forKey:nil];        
-    [navController pushViewController:viewControllerToPush animated:NO];
+
+    return transition;
 }
 
 //--------------------------------------------------------------
-+ (void)popViewControllerModalStyle:(UINavigationController *)navController
++ (CATransition *)dismissModalTransition
 {
     CATransition* transition = [CATransition animation];
     transition.duration = 0.5;
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     transition.type = kCATransitionReveal;
     transition.subtype = kCATransitionFromBottom;
-    [navController.view.layer addAnimation:transition forKey:nil];    
+
+    return transition;
+}
+
+//--------------------------------------------------------------
++ (void)pushViewControllerModalStyle:(UINavigationController *)navController 
+                      viewController:(UIViewController *)viewControllerToPush
+{
+    [navController.view.layer addAnimation:[[self class] presentModalTransition]
+                                    forKey:nil];
+    [navController pushViewController:viewControllerToPush
+                             animated:NO];
+}
+
+//--------------------------------------------------------------
++ (void)popViewControllerModalStyle:(UINavigationController *)navController
+{
+    [navController.view.layer addAnimation:[[self class] dismissModalTransition]
+                                    forKey:nil];
     [navController popViewControllerAnimated:NO];
 }
 
@@ -44,13 +70,11 @@ static NSMutableArray *_savedViewControllerStack = nil;
 + (void)popViewControllerModalStyle:(UINavigationController *)navController
                    toViewController:(UIViewController *)viewControllerToPopTo
 {
-    CATransition* transition = [CATransition animation];
-    transition.duration = 0.5;
-    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    transition.type = kCATransitionReveal;
-    transition.subtype = kCATransitionFromBottom;
-    [navController.view.layer addAnimation:transition forKey:nil];  
-    [navController popToViewController:viewControllerToPopTo animated:NO];
+
+    [navController.view.layer addAnimation:[[self class] dismissModalTransition]
+                                    forKey:nil];
+    [navController popToViewController:viewControllerToPopTo
+                              animated:NO];
 }
 
 //--------------------------------------------------------------
