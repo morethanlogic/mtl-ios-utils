@@ -101,7 +101,7 @@
 - (BOOL)validatePhoneNumber
 {
     NSMutableCharacterSet *characterSet = [NSMutableCharacterSet decimalDigitCharacterSet];
-    [characterSet addCharactersInString:@"'-.*+ "];
+    [characterSet addCharactersInString:@"'-*+#,;. "];
     return [self validateInCharacterSet:characterSet];
 }
 
